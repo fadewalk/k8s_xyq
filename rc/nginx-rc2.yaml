@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myweb02
+spec:
+  replicas: 2
+  selector:
+    app: myweb02
+  template:
+    metadata:
+      labels:
+        app: myweb02
+    spec:
+      containers:
+      - name: myweb02
+        image: nginx:1.15
+        ports:
+        - containerPort: 80
+
